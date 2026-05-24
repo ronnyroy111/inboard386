@@ -1,0 +1,69 @@
+PAL16R8
+Inputs:
+
+2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19
+
+Outputs:
+
+12 (Registered, Output feedback registered, Active low)
+13 (Registered, Output feedback registered, Active low)
+14 (Registered, Output feedback registered, Active low)
+15 (Registered, Output feedback registered, Active low)
+16 (Registered, Output feedback registered, Active low)
+17 (Registered, Output feedback registered, Active low)
+18 (Registered, Output feedback registered, Active low)
+19 (Registered, Output feedback registered, Active low)
+
+Equations:
+
+/rf12 := /rf12 & rf13 +
+         i9 & rf13 +
+         i7 & rf13
+rf12.oe = OE
+
+/rf13 := /i6 & /i8 & /rf12 & /rf18 & /rf19 +
+         /i7 & /i8 & /rf12 & rf19 +
+         /rf12 & /rf13
+rf13.oe = OE
+
+/rf14 := i4 & /i5 & rf12 & /rf13 & rf14 & /rf15 & /rf16 +
+         i3 & /i4 & rf12 & /rf13 & rf14 & rf15 & /rf16 +
+         /i2 & rf12 & /rf13 & rf14 & rf15 & rf16 +
+         i2 & /i3 & rf12 & /rf13 & rf14 & /rf15 & rf16 +
+         /i9 & /rf13 & /rf14 +
+         /i9 & rf12 & /rf14
+rf14.oe = OE
+
+/rf15 := /i5 & /rf18 +
+         /i3 & i4 & /rf18 +
+         /i8 & /rf12 & rf13 & rf15 & rf18 +
+         i8 & /rf15 & rf18 +
+         /rf13 & /rf15 +
+         rf12 & /rf15
+rf15.oe = OE
+
+/rf16 := /i5 & /rf18 +
+         /i4 & /rf18 +
+         /rf15 & /rf16 & rf18 +
+         i8 & /rf16 & rf18 +
+         /rf13 & /rf16 +
+         rf12 & /rf16
+rf16.oe = OE
+
+/rf17 := rf18 & /rf19 +
+         i7 & rf19 +
+         i6 & /rf19 +
+         /rf13 +
+         rf12 +
+         i8
+rf17.oe = OE
+
+/rf18 := i9 & rf12 & rf13 & /rf14 & rf18 +
+         i7 & /rf12 & rf13 & rf18 +
+         i6 & /rf18 & /rf19 +
+         i7 & /rf18 & rf19 +
+         i8 & /rf18
+rf18.oe = OE
+
+/rf19 := i9 & rf12 & rf13 & /rf14 & rf19
+rf19.oe = OE

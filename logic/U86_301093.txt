@@ -1,0 +1,52 @@
+PAL16R4
+Inputs:
+
+2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14, 15, 16, 17, 18, 19
+
+Outputs:
+
+12 (Combinatorial, Output feedback output, Active low)
+13 (Combinatorial, Output feedback output, Active low)
+14 (Registered, Output feedback registered, Active low)
+15 (Registered, Output feedback registered, Active low)
+16 (Registered, Output feedback registered, Active low)
+17 (Registered, Output feedback registered, Active low)
+
+Equations:
+
+/o12 = /i2 & i3 +
+       /i2 & i4 +
+       /i2 & i19
+o12.oe = vcc
+
+/o13 = /i9 & /rf15 +
+       /i8 & /rf16 +
+       i8 & i9 & /rf17
+o13.oe = vcc
+
+/rf14 := i3 & /i4 & /i18 +
+         /i3 & /rf14 +
+         i4 & /rf14 +
+         i5
+rf14.oe = OE
+
+/rf15 := /i2 & /i3 & /i4 & i6 & /i7 +
+         i3 & /rf15 +
+         i7 & /rf15 +
+         /i6 & /rf15 +
+         i4 & /rf15
+rf15.oe = OE
+
+/rf16 := /i2 & /i3 & /i4 & /i6 & i7 +
+         i3 & /rf16 +
+         /i7 & /rf16 +
+         i6 & /rf16 +
+         i4 & /rf16
+rf16.oe = OE
+
+/rf17 := /i2 & /i3 & /i4 & i6 & i7 +
+         i3 & /rf17 +
+         /i7 & /rf17 +
+         /i6 & /rf17 +
+         i4 & /rf17
+rf17.oe = OE
