@@ -1,0 +1,74 @@
+Name       U77.pld;
+Partno     U77;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16L8
+
+/* INPUT PINS */
+PIN  1 = i1;
+PIN  2 = i2;
+PIN  3 = i3;
+PIN  4 = i4;
+PIN  5 = A1;
+PIN  6 = A0;
+PIN  7 = i7;
+PIN  8 = M_IO;
+PIN  9 = D_C;
+PIN  11 = i11;
+PIN  16 = _CLK88;
+
+/* OUTPUT PINS */
+PIN  12 = o12;
+PIN  13 = MEMLE0;
+PIN  14 = MEMLE1;
+PIN  15 = MEMLE2;
+PIN  17 = _S0;
+PIN  18 = _S2;
+PIN  19 = _S1;
+
+/* LOGIC EQUATIONS */
+
+!o12 = (!i3 & !i7 & i11);
+
+!MEMLE0 = (i1 & !i2 & !i7 & !_CLK88) #
+       (!i7 & !MEMLE0 & _CLK88) #
+       (!i1 & !i7 & !MEMLE0) #
+       (A0 & !i7 & !MEMLE0) #
+       (A1 & !i7 & !MEMLE0) #
+       (i1 & !i2 & !i7 & !MEMLE0) #
+       (!i2 & !i7 & !MEMLE0 & !_CLK88);
+
+!MEMLE1 = (i1 & !i2 & !i7 & !_CLK88) #
+       (!i7 & !MEMLE1 & _CLK88) #
+       (!i1 & !i7 & !MEMLE1) #
+       (!A0 & !i7 & !MEMLE1) #
+       (A1 & !i7 & !MEMLE1) #
+       (i1 & !i2 & !i7 & !MEMLE1) #
+       (!i2 & !i7 & !MEMLE1 & !_CLK88);
+
+!MEMLE2 = (i1 & !i2 & !i7 & !_CLK88) #
+       (!i7 & !MEMLE2 & _CLK88) #
+       (!i1 & !i7 & !MEMLE2) #
+       (A0 & !i7 & !MEMLE2) #
+       (!A1 & !i7 & !MEMLE2) #
+       (i1 & !i2 & !i7 & !MEMLE2) #
+       (!i2 & !i7 & !MEMLE2 & !_CLK88);
+
+!_S0 = (i2 & !i4 & !_S0) #
+       (!i1 & !D_C & i11) #
+       (!i1 & D_C & !i11) #
+       (!i1 & !_S0);
+
+!_S2 = (!i1 & M_IO & !D_C & !i11) #
+       (i2 & !i4 & !_S2) #
+       (!i1 & !M_IO & i11) #
+       (!i1 & !M_IO & D_C) #
+       (!i1 & !_S2);
+
+!_S1 = (i2 & !i4 & i11) #
+       (!i1 & i11);

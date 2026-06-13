@@ -1,0 +1,65 @@
+Name       U86.pld;
+Partno     U86;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R4
+
+/* INPUT PINS */
+PIN  1 = 8088D_CP;
+PIN  2 = DB2B;
+PIN  3 = A5;
+PIN  4 = i4;
+PIN  5 = RESET88;
+PIN  6 = A1;
+PIN  7 = A0;
+PIN  8 = _DACK2;
+PIN  9 = _DACK3;
+PIN  11 = OE;
+PIN  18 = DB7B;
+PIN  19 = DB3B;
+
+/* OUTPUT PINS */
+PIN  12 = o12;
+PIN  13 = _MA7a;
+PIN  14 = rf14;
+PIN  15 = rf15; //unconnected
+PIN  16 = rf16; //unconnected
+PIN  17 = rf17; //unconnected
+
+/* LOGIC EQUATIONS */
+
+!o12 = (!DB2B & A5) #
+       (!DB2B & i4) #
+       (!DB2B & DB3B);
+
+!_MA7a = (!_DACK3 & !rf15) #
+       (!_DACK2 & !rf16) #
+       (_DACK2 & _DACK3 & !rf17);
+
+!rf14.D = (A5 & !i4 & !DB7B) #
+         (!A5 & !rf14) #
+         (i4 & !rf14) #
+         (RESET88);
+
+!rf15.D = (!DB2B & !A5 & !i4 & A1 & !A0) #
+         (A5 & !rf15) #
+         (A0 & !rf15) #
+         (!A1 & !rf15) #
+         (i4 & !rf15);
+
+!rf16.D = (!DB2B & !A5 & !i4 & !A1 & A0) #
+         (A5 & !rf16) #
+         (!A0 & !rf16) #
+         (A1 & !rf16) #
+         (i4 & !rf16);
+
+!rf17.D = (!DB2B & !A5 & !i4 & A1 & A0) #
+         (A5 & !rf17) #
+         (!A0 & !rf17) #
+         (!A1 & !rf17) #
+         (i4 & !rf17);

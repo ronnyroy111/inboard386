@@ -1,0 +1,78 @@
+Name       U70.pld;
+Partno     U70;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R8
+
+/* INPUT PINS */
+PIN  1 = _CLK88;
+PIN  2 = _BE3;
+PIN  3 = _BE2;
+PIN  4 = _BE1;
+PIN  5 = _BE0;
+PIN  6 = i6;
+PIN  7 = i7;
+PIN  8 = i8;
+PIN  9 = i9;
+PIN  11 = OE;
+
+/* OUTPUT PINS */
+PIN  12 = rf12;
+PIN  13 = rf13;
+PIN  14 = rf14;
+PIN  15 = A0;
+PIN  16 = A1;
+PIN  17 = 8088_ALE;
+PIN  18 = rf18;
+PIN  19 = rf19;
+
+/* LOGIC EQUATIONS */
+
+!rf12.D = (!rf12 & rf13) #
+         (i9 & rf13) #
+         (i7 & rf13);
+
+!rf13.D = (!i6 & !i8 & !rf12 & !rf18 & !rf19) #
+         (!i7 & !i8 & !rf12 & rf19) #
+         (!rf12 & !rf13);
+
+!rf14.D = (_BE1 & !_BE0 & rf12 & !rf13 & rf14 & !A0 & !A1) #
+         (_BE2 & !_BE1 & rf12 & !rf13 & rf14 & A0 & !A1) #
+         (!_BE3 & rf12 & !rf13 & rf14 & A0 & A1) #
+         (_BE3 & !_BE2 & rf12 & !rf13 & rf14 & !A0 & A1) #
+         (!i9 & !rf13 & !rf14) #
+         (!i9 & rf12 & !rf14);
+
+!A0.D = (!_BE0 & !rf18) #
+         (!_BE2 & _BE1 & !rf18) #
+         (!i8 & !rf12 & rf13 & A0 & rf18) #
+         (i8 & !A0 & rf18) #
+         (!rf13 & !A0) #
+         (rf12 & !A0);
+
+!A1.D = (!_BE0 & !rf18) #
+         (!_BE1 & !rf18) #
+         (!A0 & !A1 & rf18) #
+         (i8 & !A1 & rf18) #
+         (!rf13 & !A1) #
+         (rf12 & !A1);
+
+!8088_ALE.D = (rf18 & !rf19) #
+         (i7 & rf19) #
+         (i6 & !rf19) #
+         (!rf13) #
+         (rf12) #
+         (i8);
+
+!rf18.D = (i9 & rf12 & rf13 & !rf14 & rf18) #
+         (i7 & !rf12 & rf13 & rf18) #
+         (i6 & !rf18 & !rf19) #
+         (i7 & !rf18 & rf19) #
+         (i8 & !rf18);
+
+!rf19.D = (i9 & rf12 & rf13 & !rf14 & rf19);

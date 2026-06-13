@@ -1,0 +1,59 @@
+Name       U102.pld;
+Partno     U102;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R6
+
+/* INPUT PINS */
+PIN  1 = _CLK88;
+PIN  2 = AEN;
+PIN  3 = M_IO;
+PIN  4 = RESET88;
+PIN  5 = i5;
+PIN  6 = i6;
+PIN  7 = DB5B;
+PIN  8 = DB1B;
+PIN  9 = i9;
+PIN  11 = OE;
+PIN  12 = M_IO_L;
+
+/* OUTPUT PINS */
+PIN  13 = rf13;
+PIN  14 = rf14;
+PIN  15 = rf15;
+PIN  16 = rf16; //unconnected
+PIN  17 = rf17; //unconnected
+PIN  18 = rf18; //unconnected
+PIN  19 = o19;
+
+/* LOGIC EQUATIONS */
+
+!rf13.D = (!i5 & DB5B) #
+         (i5 & !rf13) #
+         (RESET88);
+
+!rf14.D = (!RESET88 & !i6 & !DB5B & DB1B) #
+         (!RESET88 & i6 & !rf14) #
+         (!RESET88 & DB5B & !rf14);
+
+!rf15.D = (!AEN);
+
+!rf16.D = (i9 & !rf17 & !rf18) #
+         (M_IO_L & !rf17 & !rf18) #
+         (rf16);
+
+!rf17.D = (!rf16 & !rf17) #
+         (rf16 & rf17);
+
+!rf18.D = (!rf17 & !rf18) #
+         (rf16 & rf17 & rf18) #
+         (!rf16 & !rf18);
+
+!o19 = (M_IO_L & !rf15 & !rf16 & !rf17 & !rf18) #
+       (M_IO & !rf15) #
+       (i9 & !rf15 & !rf16 & !rf17 & !rf18);

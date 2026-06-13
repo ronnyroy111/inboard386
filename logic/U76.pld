@@ -1,0 +1,79 @@
+Name       U76.pld;
+Partno     U76;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R6
+
+/* INPUT PINS */
+PIN  1 = CLK2;
+PIN  2 = _ADS;
+PIN  3 = _READY;
+PIN  4 = i4;
+PIN  5 = i5;
+PIN  6 = i6;
+PIN  7 = _CPU_MEMRW;
+PIN  8 = W_R;
+PIN  9 = CLK;
+PIN  11 = OE;
+PIN  12 = i12;
+
+/* OUTPUT PINS */
+PIN  13 = rf13;
+PIN  14 = MEMLE;
+PIN  15 = rf15;
+PIN  16 = rf16;
+PIN  17 = rf17;
+PIN  18 = rf18;
+PIN  19 = o19;
+
+/* LOGIC EQUATIONS */
+
+!rf13.D = (!_ADS & i5 & _CPU_MEMRW & !CLK & !MEMLE & !rf16 & rf17 & rf18) #
+         (!_ADS & i4 & i5 & !CLK & !MEMLE & !rf16 & rf17 & rf18) #
+         (!_ADS & !_READY & i5 & _CPU_MEMRW & !CLK & rf17 & rf18) #
+         (!_ADS & !_READY & i4 & i5 & !CLK & rf17 & rf18) #
+         (!_ADS & i5 & _CPU_MEMRW & !rf13 & rf17) #
+         (!_ADS & i4 & i5 & !rf13 & rf17) #
+         (CLK & !rf13) #
+         (_READY & !rf13);
+
+!MEMLE.D = (!_READY & !CLK) #
+         (W_R & !MEMLE) #
+         (rf16) #
+         (CLK & !MEMLE) #
+         (!i12 & !MEMLE & rf17) #
+         (_ADS & !MEMLE & rf17);
+
+!rf15.D = (!_READY & !CLK & rf15) #
+         (i6 & !rf15) #
+         (CLK & !rf15);
+
+!rf16.D = (!W_R & !rf16) #
+         (!_READY & !CLK) #
+         (MEMLE) #
+         (CLK & !rf16) #
+         (!i12 & !rf16 & rf17) #
+         (_ADS & !rf16 & rf17);
+
+!rf17.D = (!_ADS & !_READY & !CLK & i12 & MEMLE & !rf16 & rf17) #
+         (!_ADS & !_READY & !CLK & i12 & !MEMLE & rf16 & rf17) #
+         (!_ADS & _READY & !CLK & i12 & !MEMLE & !rf16 & rf17) #
+         (_READY & !rf15 & !rf16 & !rf17) #
+         (_READY & !MEMLE & !rf15 & !rf17) #
+         (CLK & !rf16 & !rf17) #
+         (CLK & !MEMLE & !rf17);
+
+!rf18.D = (!_ADS & !_READY & i5 & _CPU_MEMRW & !CLK & !rf13 & rf17) #
+         (!_ADS & !_READY & i4 & i5 & !CLK & !rf13 & rf17) #
+         (CLK & !rf13 & !rf18) #
+         (_READY & !rf13 & !rf18);
+
+!o19 = (!MEMLE & !rf16) #
+       (rf17) #
+       (i5) #
+       (!i12);

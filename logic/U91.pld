@@ -1,0 +1,74 @@
+Name       U91.pld;
+Partno     U91;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16L8
+
+/* INPUT PINS */
+PIN  1 = _BE3;
+PIN  2 = _BE2;
+PIN  3 = _BE1;
+PIN  4 = _BE0;
+PIN  5 = W_R;
+PIN  6 = DACK0;
+PIN  7 = MAENA_BA;
+PIN  8 = BA00;
+PIN  9 = BA01;
+PIN  11 = _CAS;
+PIN  13 = BA15;
+PIN  18 = BA16;
+
+/* OUTPUT PINS */
+PIN  12 = _MA6b;
+PIN  14 = MBE0;
+PIN  15 = MBE1;
+PIN  16 = MBE2;
+PIN  17 = MBE3;
+PIN  19 = _MA7b;
+
+/* LOGIC EQUATIONS */
+
+!_MA6b = (!DACK0 & !BA15) #
+       (DACK0 & !BA00) #
+       (!BA00 & !BA15);
+
+!MBE0 = (!W_R & MAENA_BA & _CAS) #
+       (!DACK0 & !MAENA_BA & !BA00 & !BA01 & _CAS) #
+       (!DACK0 & !MAENA_BA & !BA00 & !BA01 & !MBE0) #
+       (!_BE0 & MAENA_BA & _CAS) #
+       (!_BE0 & MAENA_BA & !MBE0) #
+       (!W_R & MAENA_BA & !MBE0) #
+       (!_CAS & !MBE0);
+
+!MBE1 = (!W_R & MAENA_BA & _CAS) #
+       (!DACK0 & !MAENA_BA & BA00 & !BA01 & _CAS) #
+       (!DACK0 & !MAENA_BA & BA00 & !BA01 & !MBE1) #
+       (!_BE1 & MAENA_BA & _CAS) #
+       (!_BE1 & MAENA_BA & !MBE1) #
+       (!W_R & MAENA_BA & !MBE1) #
+       (!_CAS & !MBE1);
+
+!MBE2 = (!W_R & MAENA_BA & _CAS) #
+       (!DACK0 & !MAENA_BA & !BA00 & BA01 & _CAS) #
+       (!DACK0 & !MAENA_BA & !BA00 & BA01 & !MBE2) #
+       (!_BE2 & MAENA_BA & _CAS) #
+       (!_BE2 & MAENA_BA & !MBE2) #
+       (!W_R & MAENA_BA & !MBE2) #
+       (!_CAS & !MBE2);
+
+!MBE3 = (!DACK0 & !MAENA_BA & BA00 & BA01 & _CAS) #
+       (!DACK0 & !MAENA_BA & BA00 & BA01 & !MBE3) #
+       (!_BE3 & MAENA_BA & _CAS) #
+       (!_BE3 & MAENA_BA & !MBE3) #
+       (!W_R & MAENA_BA & _CAS) #
+       (!W_R & MAENA_BA & !MBE3) #
+       (!_CAS & !MBE3);
+
+!_MA7b = (!DACK0 & !BA16) #
+       (DACK0 & !BA01) #
+       (!BA01 & !BA16);

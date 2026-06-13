@@ -1,0 +1,50 @@
+Name       U84.pld;
+Partno     U84;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16L8
+
+/* INPUT PINS */
+PIN  1 = M_IO;
+PIN  2 = D_C;
+PIN  3 = W_R;
+PIN  4 = A31;
+PIN  5 = A10;
+PIN  6 = A9;
+PIN  7 = A8;
+PIN  8 = A7;
+PIN  9 = A6;
+PIN  11 = A5;
+PIN  13 = i13;
+PIN  14 = i14;
+
+/* OUTPUT PINS */
+PIN  12 = _CPU_MEMRW;
+PIN  15 = o15;
+PIN  16 = o16;
+PIN  17 = o17;
+PIN  18 = o18;
+PIN  19 = o19;
+
+/* LOGIC EQUATIONS */
+
+!_CPU_MEMRW = (M_IO & !W_R) #
+       (M_IO & D_C);
+
+!o15 = (!M_IO & D_C & !A31 & !A10 & !A9 & !A8 & !A7 & A5);
+
+!o16 = (!M_IO & D_C & W_R & A10 & A9 & !A8 & !A7 & A6 & A5) #
+       (!M_IO & !D_C & !W_R & !i13) #
+       (!M_IO & D_C & A31) #
+       (M_IO & !D_C & W_R);
+
+!o17 = (!M_IO & !D_C & !W_R);
+
+!o18 = (!M_IO & D_C & A31 & i14);
+
+!o19 = (!M_IO & D_C & W_R & !A31 & !A10 & !A9 & !A8 & A7 & !A6);

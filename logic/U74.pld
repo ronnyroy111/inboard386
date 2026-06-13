@@ -1,0 +1,65 @@
+Name       U74.pld;
+Partno     U74;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R4
+
+/* INPUT PINS */
+PIN  1 = CLK2;
+PIN  2 = _RESET;
+PIN  3 = i3;
+PIN  4 = i4;
+PIN  5 = A2;
+PIN  6 = CLK;
+PIN  7 = _ADS;
+PIN  8 = _READY;
+PIN  9 = _387_ERR;
+PIN  11 = OE;
+PIN  18 = DACK0;
+PIN  19 = _ERROR387;
+
+/* OUTPUT PINS */
+PIN  12 = o12;
+PIN  13 = o13;
+PIN  14 = _ERROR;
+PIN  15 = rf15; //unconnected
+PIN  16 = FPU_STAT_SET;
+PIN  17 = rf17;
+
+/* LOGIC EQUATIONS */
+
+!o12 = (!o13 & DACK0);
+
+!o13 = (!_RESET & _ERROR387) #
+       (_RESET & !o13) #
+       (!o13 & _ERROR387);
+
+!_ERROR.D = (!_RESET & !_ERROR387) #
+         (_RESET & CLK & !_ERROR) #
+         (_RESET & !i3 & !_ERROR);
+
+!rf15.D = (A2 & _ADS & !rf15) #
+         (!i4 & A2 & !CLK & !_ADS & !_READY) #
+         (!i3 & !i4 & A2 & !CLK & !_ADS) #
+         (i4 & _ADS & !rf15) #
+         (i3 & _READY & !rf15) #
+         (!i4 & CLK & !rf15) #
+         (!i4 & _READY & !rf15);
+
+!FPU_STAT_SET.D = (!i3 & !i4 & !A2 & !CLK & !_ADS & _READY & !_387_ERR & !rf15 & !rf17) #
+         (!i4 & !A2 & !CLK & !_ADS & !_READY & !_387_ERR & !rf15 & FPU_STAT_SET & !rf17) #
+         (_READY & !FPU_STAT_SET) #
+         (CLK & !FPU_STAT_SET) #
+         (!_RESET);
+
+!rf17.D = (i3 & !CLK & _READY & !_387_ERR & rf15) #
+         (i4 & !CLK & !_387_ERR & rf15) #
+         (!CLK & _ADS & !_387_ERR & rf15) #
+         (CLK & !rf17) #
+         (_READY & !rf17) #
+         (!_387_ERR & !rf17);

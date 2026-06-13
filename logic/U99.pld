@@ -1,0 +1,73 @@
+Name       U99.pld;
+Partno     U99;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16L8
+
+/* INPUT PINS */
+PIN  1 = A1;
+PIN  2 = A0;
+PIN  3 = BA01;
+PIN  4 = BA00;
+PIN  5 = i5;
+PIN  6 = i6;
+PIN  7 = _SMEMW;
+PIN  8 = _SMEMR;
+PIN  9 = W_R;
+PIN  11 = i11;
+PIN  13 = _CAS;
+
+/* OUTPUT PINS */
+PIN  12 = _MUX_BE0;
+PIN  14 = o14;
+PIN  15 = BUSDIR;
+PIN  16 = MEMW;
+PIN  17 = _MUX_BE1;
+PIN  18 = _MUX_BE2;
+PIN  19 = _MUX_BE3;
+
+/* LOGIC EQUATIONS */
+
+!_MUX_BE0 = (!A1 & !A0 & !i5 & i6) #
+       (!BA01 & !BA00 & !i6 & !_SMEMR) #
+       (!BA01 & !BA00 & !i6 & !_SMEMW) #
+       (!A1 & !A0 & !BA01 & !BA00 & !i5 & !_SMEMR) #
+       (!A1 & !A0 & !BA01 & !BA00 & !i5 & !_SMEMW);
+
+!o14 = (i11 & !o14) #
+       (W_R & !i11) #
+       (W_R & !o14);
+
+!BUSDIR = (i6 & o14) #
+       (!i6 & _SMEMR) #
+       (_SMEMR & o14);
+
+!MEMW = (!i6 & _SMEMW & _CAS) #
+       (i6 & !W_R & _CAS) #
+       (!_CAS & !MEMW) #
+       (_SMEMW & !W_R & _CAS) #
+       (!i6 & _SMEMW & !MEMW) #
+       (i6 & !W_R & !MEMW);
+
+!_MUX_BE1 = (!A1 & A0 & !i5 & i6) #
+       (!BA01 & BA00 & !i6 & !_SMEMR) #
+       (!BA01 & BA00 & !i6 & !_SMEMW) #
+       (!A1 & A0 & !BA01 & BA00 & !i5 & !_SMEMR) #
+       (!A1 & A0 & !BA01 & BA00 & !i5 & !_SMEMW);
+
+!_MUX_BE2 = (A1 & !A0 & !i5 & i6) #
+       (BA01 & !BA00 & !i6 & !_SMEMR) #
+       (BA01 & !BA00 & !i6 & !_SMEMW) #
+       (A1 & !A0 & BA01 & !BA00 & !i5 & !_SMEMR) #
+       (A1 & !A0 & BA01 & !BA00 & !i5 & !_SMEMW);
+
+!_MUX_BE3 = (A1 & A0 & !i5 & i6) #
+       (BA01 & BA00 & !i6 & !_SMEMR) #
+       (BA01 & BA00 & !i6 & !_SMEMW) #
+       (A1 & A0 & BA01 & BA00 & !i5 & !_SMEMR) #
+       (A1 & A0 & BA01 & BA00 & !i5 & !_SMEMW);

@@ -1,0 +1,54 @@
+Name       U101.pld;
+Partno     U101;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R4
+
+/* INPUT PINS */
+PIN  1 = i1;
+PIN  2 = A6;
+PIN  3 = A9;
+PIN  4 = i4;
+PIN  5 = _BE1;
+PIN  6 = i6;
+PIN  7 = i7;
+PIN  8 = _387_ERR;
+PIN  9 = INTR88;
+PIN  11 = OE;
+PIN  12 = i12;
+PIN  18 = i18; //unused
+
+/* OUTPUT PINS */
+PIN  13 = o13;
+PIN  14 = rf14;
+PIN  15 = rf15; //unconnected
+PIN  16 = rf16; //unconnected
+PIN  17 = rf17; //unconnected
+PIN  19 = INTR;
+
+/* LOGIC EQUATIONS */
+
+!o13 = (!i12);
+
+!rf14.D = (!A9) #
+         (i6) #
+         (rf14);
+
+!rf15.D = (!A6 & !i4 & !_BE1 & !i7 & !rf16 & !rf17) #
+         (!rf15 & !rf16) #
+         (!rf15 & !rf17);
+
+!rf16.D = (rf15) #
+         (rf16 & rf17) #
+         (!rf16 & !rf17);
+
+!rf17.D = (rf15) #
+         (rf17);
+
+!INTR = (_387_ERR & !INTR88) #
+       (!rf15);

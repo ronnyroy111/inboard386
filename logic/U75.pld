@@ -1,0 +1,66 @@
+Name       U75.pld;
+Partno     U75;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16R6
+
+/* INPUT PINS */
+PIN  1 = CLK2;
+PIN  2 = _CPU_MEMRW;
+PIN  3 = _ADS;
+PIN  4 = i4;
+PIN  5 = AEN_BUF;
+PIN  6 = i6;
+PIN  7 = i7;
+PIN  8 = i8;
+PIN  9 = CLK;
+PIN  11 = OE;
+PIN  12 = i12;
+PIN  19 = _RESET;
+
+/* OUTPUT PINS */
+PIN  13 = rf13;
+PIN  14 = MAENA_BA;
+PIN  15 = rf15;
+PIN  16 = _CAS;
+PIN  17 = _RAS;
+PIN  18 = MA_S0;
+
+/* LOGIC EQUATIONS */
+
+!rf13.D = (!_ADS & !i7 & !CLK & rf13) #
+         (!i6 & !i7 & !CLK & rf13);
+
+!MAENA_BA.D = (AEN_BUF & !CLK & _CAS & _RAS) #
+         (!MAENA_BA & !_CAS) #
+         (!MAENA_BA & !_RAS) #
+         (CLK & !MAENA_BA);
+
+!rf15.D = (!CLK & MAENA_BA & !_CAS & !_RAS & !MA_S0) #
+         (CLK & !rf15 & !_CAS & !MA_S0) #
+         (!rf15 & !_CAS & !_RAS & !MA_S0) #
+         (!_RESET);
+
+!_CAS.D = (rf15 & !_RAS & !MA_S0 & _RESET) #
+         (!i4 & rf15 & !_CAS & MA_S0 & _RESET) #
+         (CLK & !rf15 & !_CAS & !MA_S0 & _RESET) #
+         (CLK & rf15 & !_CAS & MA_S0 & _RESET) #
+         (!_CAS & !_RAS & !MA_S0 & _RESET) #
+         (rf15 & !_CAS & !_RAS & _RESET);
+
+!_RAS.D = (!_CPU_MEMRW & !_ADS & !AEN_BUF & !i7 & i8 & !CLK & !i12 & MAENA_BA & rf15 & _CAS & MA_S0 & _RESET) #
+         (!_CPU_MEMRW & !AEN_BUF & !i6 & i8 & !CLK & !i12 & MAENA_BA & rf15 & _CAS & MA_S0 & _RESET) #
+         (!i4 & !CLK & !MAENA_BA & rf15 & _CAS & MA_S0 & _RESET) #
+         (rf15 & !_RAS & !MA_S0 & _RESET) #
+         (rf15 & _CAS & !_RAS & _RESET);
+
+!MA_S0.D = (rf15 & _CAS & !_RAS & _RESET) #
+         (CLK & !rf15 & !_CAS & !MA_S0 & _RESET) #
+         (CLK & !_CAS & !_RAS & !MA_S0 & _RESET) #
+         (MAENA_BA & !_CAS & !_RAS & !MA_S0 & _RESET) #
+         (!rf15 & !_CAS & !_RAS & !MA_S0 & _RESET);
