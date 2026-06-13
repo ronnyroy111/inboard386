@@ -21696,7 +21696,7 @@
 		)
 		(uuid "b9f1682c-e28d-4b09-9222-fb96e51359a8")
 	)
-	(text "U87 Outputs:\n12\n15-19"
+	(text "U87 Outputs:\n12\n15-19\n16 cond. OE"
 		(exclude_from_sim no)
 		(at 101.346 708.66 0)
 		(effects
@@ -25393,6 +25393,16 @@
 			(type default)
 		)
 		(uuid "25718cd2-5cfd-4042-9768-3158a891f3f0")
+	)
+	(wire
+		(pts
+			(xy 381 406.4) (xy 546.1 406.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2574daed-ad3e-4c03-8d8a-5c944b3cbf53")
 	)
 	(wire
 		(pts
@@ -30073,16 +30083,6 @@
 			(type default)
 		)
 		(uuid "8f401b35-26df-4c6e-b4ef-2f0d07507903")
-	)
-	(wire
-		(pts
-			(xy 546.1 406.4) (xy 381 406.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fb48015-8057-41ae-8b3b-5cdeca8b4bad")
 	)
 	(wire
 		(pts
@@ -35073,6 +35073,46 @@
 			(type default)
 		)
 		(uuid "ffdc9579-cd29-4866-a909-ab73b64da642")
+	)
+	(label "~{MUX_BE3}"
+		(at 389.89 406.4 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "88b7eb8b-29ea-47b1-bf49-b6b841682e98")
+	)
+	(label "~{MUX_BE2}"
+		(at 389.89 403.86 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "965eeddb-6411-48a0-a0a3-a664b52f8550")
+	)
+	(label "~{MUX_BE0}"
+		(at 382.27 388.62 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c7814908-c0e4-4927-b420-02ddcbc9a97c")
+	)
+	(label "~{MUX_BE1}"
+		(at 389.89 401.32 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fdf3f7d5-3145-424b-beb3-1795e55f2b18")
 	)
 	(global_label "BA04"
 		(shape input)
