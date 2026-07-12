@@ -21,23 +21,23 @@ PIN  8 = A23;
 PIN  9 = i9;
 PIN  10 = W_R;
 PIN  11 = DACK0;
-PIN  14 = i14;
+PIN  14 = ROMCACHE;
 PIN  23 = i23;
 PIN  13 = i13;
 PIN  16 = MAENA_BA;
 
 /* OUTPUT PINS */
-PIN  15 = o15;
+PIN  15 = RAS_EN_4M;
 PIN  17 = _MA7C;
 PIN  18 = _MA8a;
 PIN  19 = o19;
-PIN  20 = o20;
-PIN  21 = o21;
-PIN  22 = o22;
+PIN  20 = RAS_EN_SYS;
+PIN  21 = RAS_EN_1M_1;
+PIN  22 = RAS_EN_1M_2;
 
 /* LOGIC EQUATIONS */
 
-!o15 = (A22 & !A21 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
+!RAS_EN_4M = (A22 & !A21 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
        (!A22 & A20 & A18 & !A23 & i9 & MAENA_BA & !i23) #
        (!A22 & A20 & A19 & !A23 & i9 & MAENA_BA & !i23) #
        (!A22 & A21 & !A23 & i9 & MAENA_BA) #
@@ -57,27 +57,27 @@ PIN  22 = o22;
        (A21 & !A19) #
        (!A20 & !A19);
 
-!o19 = (A18 & A17 & A16 & !W_R & i13 & i14) #
+!o19 = (A18 & A17 & A16 & !W_R & i13 & ROMCACHE) #
        (!A18 & !A17 & !A23 & i13) #
        (A20 & !A23 & i13 & !i23) #
        (!A19 & !A23 & i13) #
        (A22 & !A23 & i13) #
-       (A23 & i13 & i14) #
+       (A23 & i13 & ROMCACHE) #
        (A21 & !A23 & i13);
 
-!o20 = (A22 & A21 & A20 & A19 & A18 & A17 & A16 & A23 & i9 & !W_R & i14) #
+!RAS_EN_SYS = (A22 & A21 & A20 & A19 & A18 & A17 & A16 & A23 & i9 & !W_R & ROMCACHE) #
        (!A22 & !A21 & !A19 & !A18 & !A23 & i9) #
        (!A22 & !A21 & !A23 & i9 & i23) #
        (!A22 & !A21 & !A20 & !A23 & i9) #
-       (A22 & !A21 & A20 & A19 & !A23 & i9 & !i14) #
+       (A22 & !A21 & A20 & A19 & !A23 & i9 & !ROMCACHE) #
        (!MAENA_BA);
 
-!o21 = (DACK0 & !MAENA_BA) #
+!RAS_EN_1M_1 = (DACK0 & !MAENA_BA) #
        (!A22 & A21 & !A20 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
        (!A22 & !A21 & A20 & A18 & !A23 & i9 & MAENA_BA & !i23) #
        (!A22 & !A21 & A20 & A19 & !A23 & i9 & MAENA_BA & !i23);
 
-!o22 = (DACK0 & !MAENA_BA) #
+!RAS_EN_1M_2 = (DACK0 & !MAENA_BA) #
        (!A22 & A21 & A20 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
        (!A22 & A21 & !A20 & A18 & !A23 & i9 & MAENA_BA) #
        (!A22 & A21 & !A20 & A19 & !A23 & i9 & MAENA_BA);

@@ -1,0 +1,99 @@
+Name       U71_modified.pld;
+Partno     U71;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     P22V10;
+//          20L8
+
+/* INPUT PINS */
+PIN  1 = A22;
+PIN  2 = A21;
+PIN  3 = A20;
+PIN  4 = A19;
+PIN  5 = A18;
+PIN  6 = A17;
+PIN  7 = A16;
+PIN  8 = A23;
+PIN  9 = i9;
+PIN  10 = W_R;
+PIN  11 = DACK0;
+PIN  14 = ROMCACHE;
+PIN  23 = i23;
+PIN  13 = i13;
+PIN  16 = MAENA_BA;
+
+/* OUTPUT PINS */
+PIN  15 = RAS_EN_4M;
+PIN  17 = _MA7C;
+PIN  18 = _MA8a;
+PIN  19 = o19;
+PIN  20 = RAS_EN_SYS;
+PIN  21 = 4MB_2;
+PIN  22 = RAS_EN_1M_2;
+
+/* LOGIC EQUATIONS */
+
+!_MA7C = (A22 & !A18) #
+       (A21 & !A18) #
+       (!A18 & i23) #
+       (!A18 & A17) #
+       (A19 & !A18) #
+       (!A20 & !A18);
+
+!_MA8a = (A22 & !A19) #
+       (!A19 & i23) #
+       (!A19 & A18) #
+       (A21 & !A19) #
+       (!A20 & !A19);
+
+!o19 = (A18 & A17 & A16 & !W_R & i13 & ROMCACHE) #//    xxxxx111    70000-7FFFF     448-512k
+       (!A23 & !A18 & !A17 & i13) #//                   
+       (!A23 & A20 & i13 & !i23) #
+       (!A23 & !A19 & i13) #
+       (!A23 & A22 & i13) #
+       (A23 & i13 & ROMCACHE) #
+       (!A23 & A21 & i13);
+
+//1MB onboard
+!RAS_EN_SYS = (A23 & A22 & A21 & A20 & A19 & A18 & A17 & A16 & i9 & !W_R & ROMCACHE) #//	11111111	8192 + 4096 + 2028 + 1024 + 512 + 256 + 128 + 64 + 0-63	FF0000-FFFFFF
+       (!A23 & !A22 & !A21 & !A19 & !A18 & i9) #//								            000x00		0/1024 + 0-255											000000-3FFFF, 100000-13FFFF
+       (!A23 & !A22 & !A21 & i9 & i23) #//										            000xxx		0/1024 + 0/512 + 0/256									000000-1FFFFF
+       (!A23 & !A22 & !A21 & !A20 & i9) #//										            0000xx		0/512 + 0/256											000000-0FFFFF
+       //(!A23 & A22 & !A21 & A20 & A19 & i9 & !ROMCACHE) #//                               01011x		4096 + 1024 + 512 + 0/256								580000-5FFFFF
+       (!MAENA_BA);
+
+//1MB ext1
+!RAS_EN_1M_1 = (DACK0 & !MAENA_BA) #
+       (!A23 & !A22 & A21 & !A20 & !A19 & !A18 & i9 & MAENA_BA) #//	001000	2028 + 0-255					200000-23FFFF
+       (!A23 & !A22 & !A21 & A20 & A18 & i9 & MAENA_BA & !i23) #//	0001x1	1024 + 0/512 + 256 + 0-255		140000-17FFFF, 1C0000-1FFFFF
+       (!A23 & !A22 & !A21 & A20 & A19 & i9 & MAENA_BA & !i23);//	00011x	1024 + 512 + + 0/256 + 0-255	180000-1FFFFF
+
+//1MB ext2
+!RAS_EN_1M_2 = (DACK0 & !MAENA_BA) #
+       (!A23 & !A22 & A21 & A20 & !A19 & !A18 & i9 & MAENA_BA) #//	001100	2028 + 1024 + 0-255				300000-33FFFF
+       (!A23 & !A22 & A21 & !A20 & A18 & i9 & MAENA_BA) #//			0010x1	2028 + 0/512 + 256 + 0-255		240000-27FFFF, 2C0000-2FFFFF
+       (!A23 & !A22 & A21 & !A20 & A19 & i9 & MAENA_BA);//			00101x	2028 + 0/256 + 0-255			280000-2FFFFF
+       
+//4MB ext1
+!RAS_EN_4M = (!A23 & A22 & !A21 & !A19 & !A18 & i9 & MAENA_BA) #//	010x00	4096 + 0/1024 + 0-255					400000-43FFFF, 500000-53FFFF
+       (!A23 & !A22 & A20 & A18 & i9 & MAENA_BA & !i23) #//			00x1x1	0/2048 + 1024 + 0/512 + 256 + 0-255		140000-17FFFF, 1C0000-1FFFFF, 340000-37FFFF, 3C0000-3FFFFF
+       (!A23 & !A22 & A20 & A19 & i9 & MAENA_BA & !i23) #//			00x11x	0/2048 + 1024 + 512 + 0/256 + 0-255		180000-1FFFFF, 380000-3FFFFF
+       (!A23 & !A22 & A21 & i9 & MAENA_BA) #//						001xxx	2048 + 0/1024 + 0/512 + 0/256 + 0-255	200000-3FFFFF
+       (!A23 & A22 & !A21 & !A20 & i9 & MAENA_BA) #//				0100xx	4096 + 0/512 + 0/256 + 0-255			400000-4FFFFF
+       (DACK0 & !MAENA_BA);
+
+//4MB ext2
+!4MB_2 = (A23 & !A22 & !A21 & !A19 & !A18 & i9 & MAENA_BA) #//		100x00	8192 + 0/1024 + 0-255							800000-83FFFF, 900000-93FFFF
+       (!A23 & A22 & A20 & A18 & i9 & MAENA_BA & !i23) #//			01x1x1	4096 + 0/2048 + 1024 + 0/512 + 256 + 0-255		540000-57FFFF, 5C0000-5FFFFF, 740000-77FFFF, 7C0000-7FFFFF
+       (!A23 & A22 & A20 & A19 & i9 & MAENA_BA & !i23) #//			01x11x	4096 + 0/2048 + 1024 + 512 + 0/256 + 0-255		580000-5FFFFF, 780000-7FFFFF
+       (!A23 & A22 & A21 & i9 & MAENA_BA) #//						011xxx	4096 + 2048 + 0/1024 + 0/512 + 0/256 + 0-255	600000-7FFFFF
+       (A23 & !A22 & !A21 & !A20 & i9 & MAENA_BA) #//				1000xx	8192 + 0/512 + 0/256 + 0-255					800000-8FFFFF
+       (DACK0 & !MAENA_BA);
+       
+//	18		19		20		21		22		23
+//	256		512		1024	2048	4096	8192
+
