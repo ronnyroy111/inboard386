@@ -1,0 +1,55 @@
+Name       U87.pld;
+Partno     U87;
+Date       ;
+Revision   ;
+Designer   ;
+Company    ;
+Assembly   ;
+Location   ;
+Device     G16V8;
+//          16L8
+
+/* INPUT PINS */
+PIN  1 = BA19;
+PIN  2 = BA18;
+PIN  3 = BA17;
+PIN  4 = i4;
+PIN  5 = i5;
+PIN  6 = i6;
+PIN  7 = _SMEMW;
+PIN  8 = _SMEMR;
+PIN  9 = AEN;
+PIN  11 = DACK0;
+PIN  13 = i13;
+PIN  14 = i14;
+
+/* OUTPUT PINS */
+PIN  12 = DB_EN;
+PIN  15 = o15;
+PIN  16 = IO;
+PIN  17 = o17; //unconnected
+PIN  18 = o18;
+PIN  19 = NMI;
+
+/* LOGIC EQUATIONS */
+
+!DB_EN = (!DACK0 & !o18);
+
+!o15 = (i13) #
+       (i14);
+
+!IO = 'b'1;
+IO.oe = 'b'0;
+
+!o17 = (IO & !o17) #
+       (!i5);
+
+!o18 = (BA19 & !BA18 & !BA17 & !_SMEMW & AEN) #
+       (BA19 & !BA18 & !BA17 & !_SMEMR & AEN) #
+       (!BA19 & BA18 & !_SMEMW & AEN) #
+       (!BA19 & BA18 & !_SMEMR & AEN) #
+       (!_SMEMW & AEN & DACK0) #
+       (!_SMEMR & AEN & DACK0);
+
+!NMI = (!o17) #
+       (!i4);
