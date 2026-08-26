@@ -16,7 +16,7 @@ PIN  3 = A9;
 PIN  4 = i4;
 PIN  5 = _BE1;
 PIN  6 = i6;
-PIN  7 = i7;
+PIN  7 = ROMCACHE;
 PIN  8 = _387_ERR;
 PIN  9 = INTR88;
 PIN  11 = OE;
@@ -39,7 +39,7 @@ PIN  19 = INTR;
          (i6) #
          (rf14);
 
-!rf15.D = (!A6 & !i4 & !_BE1 & !i7 & !rf16 & !rf17) #
+!rf15.D = (!A6 & !i4 & !_BE1 & !ROMCACHE & !rf16 & !rf17) #
          (!rf15 & !rf16) #
          (!rf15 & !rf17);
 

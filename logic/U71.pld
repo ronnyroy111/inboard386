@@ -22,7 +22,7 @@ PIN  9 = i9;
 PIN  10 = W_R;
 PIN  11 = DACK0;
 PIN  14 = ROMCACHE;
-PIN  23 = i23;
+PIN  23 = _A20EN;
 PIN  13 = i13;
 PIN  16 = MAENA_BA;
 
@@ -30,7 +30,7 @@ PIN  16 = MAENA_BA;
 PIN  15 = RAS_EN_4M;
 PIN  17 = _MA7C;
 PIN  18 = _MA8a;
-PIN  19 = o19;
+PIN  19 = _32BIT_EN;
 PIN  20 = RAS_EN_SYS;
 PIN  21 = RAS_EN_1M_1;
 PIN  22 = RAS_EN_1M_2;
@@ -38,28 +38,28 @@ PIN  22 = RAS_EN_1M_2;
 /* LOGIC EQUATIONS */
 
 !RAS_EN_4M = (A22 & !A21 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
-       (!A22 & A20 & A18 & !A23 & i9 & MAENA_BA & !i23) #
-       (!A22 & A20 & A19 & !A23 & i9 & MAENA_BA & !i23) #
+       (!A22 & A20 & A18 & !A23 & i9 & MAENA_BA & !_A20EN) #
+       (!A22 & A20 & A19 & !A23 & i9 & MAENA_BA & !_A20EN) #
        (!A22 & A21 & !A23 & i9 & MAENA_BA) #
        (A22 & !A21 & !A20 & !A23 & i9 & MAENA_BA) #
        (DACK0 & !MAENA_BA);
 
 !_MA7C = (A22 & !A18) #
        (A21 & !A18) #
-       (!A18 & i23) #
+       (!A18 & _A20EN) #
        (!A18 & A17) #
        (A19 & !A18) #
        (!A20 & !A18);
 
 !_MA8a = (A22 & !A19) #
-       (!A19 & i23) #
+       (!A19 & _A20EN) #
        (!A19 & A18) #
        (A21 & !A19) #
        (!A20 & !A19);
 
-!o19 = (A18 & A17 & A16 & !W_R & i13 & ROMCACHE) #
+!_32BIT_EN = (A18 & A17 & A16 & !W_R & i13 & ROMCACHE) #
        (!A18 & !A17 & !A23 & i13) #
-       (A20 & !A23 & i13 & !i23) #
+       (A20 & !A23 & i13 & !_A20EN) #
        (!A19 & !A23 & i13) #
        (A22 & !A23 & i13) #
        (A23 & i13 & ROMCACHE) #
@@ -67,15 +67,15 @@ PIN  22 = RAS_EN_1M_2;
 
 !RAS_EN_SYS = (A22 & A21 & A20 & A19 & A18 & A17 & A16 & A23 & i9 & !W_R & ROMCACHE) #
        (!A22 & !A21 & !A19 & !A18 & !A23 & i9) #
-       (!A22 & !A21 & !A23 & i9 & i23) #
+       (!A22 & !A21 & !A23 & i9 & _A20EN) #
        (!A22 & !A21 & !A20 & !A23 & i9) #
        (A22 & !A21 & A20 & A19 & !A23 & i9 & !ROMCACHE) #
        (!MAENA_BA);
 
 !RAS_EN_1M_1 = (DACK0 & !MAENA_BA) #
        (!A22 & A21 & !A20 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
-       (!A22 & !A21 & A20 & A18 & !A23 & i9 & MAENA_BA & !i23) #
-       (!A22 & !A21 & A20 & A19 & !A23 & i9 & MAENA_BA & !i23);
+       (!A22 & !A21 & A20 & A18 & !A23 & i9 & MAENA_BA & !_A20EN) #
+       (!A22 & !A21 & A20 & A19 & !A23 & i9 & MAENA_BA & !_A20EN);
 
 !RAS_EN_1M_2 = (DACK0 & !MAENA_BA) #
        (!A22 & A21 & A20 & !A19 & !A18 & !A23 & i9 & MAENA_BA) #
