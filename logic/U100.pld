@@ -10,8 +10,8 @@ Device     G16V8;
 //          16L8
 
 /* INPUT PINS */
-PIN  1 = i1;
-PIN  2 = i2;
+PIN  1 = i1;         //1x111x11    DD/DF/FD/FFh
+PIN  2 = i2;         //20-3F/60-7Fh
 PIN  3 = W_R;
 PIN  4 = RESET88;
 PIN  5 = 8088_ALE;
@@ -35,13 +35,16 @@ PIN  19 = o19;
 
 !AtoAD = (8088_ALE);
 
-!o13 = (!A6 & !o13) #
+!o13 = (!A6 & !o13) #                                          //60H Write latch?
        (A0 & !o13) #
        (A1 & !o13) #
        (!o13 & !8088D_CP) #
        (!W_R & !o13) #
        (i2 & !o13) #
        (RESET88);
+
+o13 = RESET88 #
+       (!o13 & (!A6 # A0 # A1 # !8088D_CP # !W_R # i2));
 
 !8088D_OE = (!8088_ALE & !i14);
 
@@ -50,6 +53,6 @@ PIN  19 = o19;
 
 !o17 = (!i2 & !W_R & !A1 & !A0 & A2 & A6);                     //64H Read
 
-!o18 = (!i1 & !i2 & W_R & 8088_ALE & !A1 & !A0 & !A2 & A6);    //60H Write
+!o18 = (!i1 & !i2 & W_R & 8088_ALE & !A1 & !A0 & !A2 & A6);    //60H Write DD/DF/FD/FFh
 
 !o19 = (!i2 & W_R & 8088_ALE & !A1 & A0 & !A2 & A6);           //61H Write
