@@ -34989,7 +34989,7 @@
 		(uuid "ffdc9579-cd29-4866-a909-ab73b64da642")
 	)
 	(label "~{A20EN}"
-		(at 514.35 806.45 0)
+		(at 511.81 806.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -35057,6 +35057,16 @@
 			(justify left bottom)
 		)
 		(uuid "bea0b4c0-5a2d-42f6-be33-2534ac7d8886")
+	)
+	(label "DRAM_EN"
+		(at 514.35 808.99 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c2a80c28-02d8-4d65-8eb2-11f2f7f35880")
 	)
 	(label "~{MUX_BE0}"
 		(at 382.27 388.62 0)
@@ -37488,7 +37498,7 @@
 			)
 		)
 	)
-	(global_label "ROMCACHE"
+	(global_label "ROMSHADOW"
 		(shape input)
 		(at 266.7 655.32 90)
 		(fields_autoplaced yes)
@@ -37500,7 +37510,7 @@
 		)
 		(uuid "151c6074-3148-4ece-a1e1-4ad36c5c378e")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 266.7 642.1748 90)
+			(at 266.7 640.6024 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -61197,7 +61207,7 @@
 			)
 		)
 	)
-	(global_label "ROMCACHE"
+	(global_label "ROMSHADOW"
 		(shape input)
 		(at 533.4 803.91 180)
 		(fields_autoplaced yes)
@@ -61209,7 +61219,7 @@
 		)
 		(uuid "cc8f13da-208b-4eaf-8fa0-488fb1b2a256")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 520.2548 803.91 0)
+			(at 518.6824 803.91 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

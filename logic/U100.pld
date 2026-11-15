@@ -48,8 +48,8 @@ PIN  19 = o19;
 !8088D_CP = (!RESET88 & !8088_ALE) #
        (_CLK88);
 
-!o17 = (!i2 & !W_R & !A1 & !A0 & A2 & A6);
+!o17 = (!i2 & !W_R & !A1 & !A0 & A2 & A6);                     //64H Read
 
-!o18 = (!i1 & !i2 & W_R & 8088_ALE & !A1 & !A0 & !A2 & A6);
+!o18 = (!i1 & !i2 & W_R & 8088_ALE & !A1 & !A0 & !A2 & A6);    //60H Write
 
-!o19 = (!i2 & W_R & 8088_ALE & !A1 & A0 & !A2 & A6);
+!o19 = (!i2 & W_R & 8088_ALE & !A1 & A0 & !A2 & A6);           //61H Write

@@ -36,9 +36,9 @@ PIN  19 = o19;
 !_CPU_MEMRW = (M_IO & !W_R) #
        (M_IO & D_C);
 
-!o15 = (!M_IO & D_C & !A31 & !A10 & !A9 & !A8 & !A7 & A5);
+!o15 = (!M_IO & D_C & !A31 & !A10 & !A9 & !A8 & !A7 & A5);            //0000x1xxxxx   20-3F/60-7F
 
-!o16 = (!M_IO & D_C & W_R & A10 & A9 & !A8 & !A7 & A6 & A5) #         110011xxxxx   660-67F
+!o16 = (!M_IO & D_C & W_R & A10 & A9 & !A8 & !A7 & A6 & A5) #         //110011xxxxx   660-67F
        (!M_IO & !D_C & !W_R & !i13) #
        (!M_IO & D_C & A31) #
        (M_IO & !D_C & W_R);

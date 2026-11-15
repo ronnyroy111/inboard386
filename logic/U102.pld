@@ -24,7 +24,7 @@ PIN  12 = M_IO_L;
 
 /* OUTPUT PINS */
 PIN  13 = rf13;
-PIN  14 = rf14;
+PIN  14 = _A20EN;
 PIN  15 = rf15;
 PIN  16 = rf16; //unconnected
 PIN  17 = rf17; //unconnected
@@ -37,9 +37,9 @@ PIN  19 = o19;
          (i5 & !rf13) #
          (RESET88);
 
-!rf14.D = (!RESET88 & !i6 & !DB5B & DB1B) #
-         (!RESET88 & i6 & !rf14) #
-         (!RESET88 & DB5B & !rf14);
+!_A20EN.D = (!RESET88 & !i6 & !DB5B & DB1B) #
+         (!RESET88 & i6 & !_A20EN) #
+         (!RESET88 & DB5B & !_A20EN);
 
 !rf15.D = (!AEN);
 
