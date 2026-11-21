@@ -4382,268 +4382,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Jumper:SolderJumper_3_Open"
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom no)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "JP"
-				(at -2.54 -2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "SolderJumper_3_Open"
-				(at 0 2.794 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 -15.24 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Solder Jumper, 3-pole, open"
-				(at 0 -12.7 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
-				(at 0 -17.78 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
-				(at 0 -20.32 0)
-				(show_name yes)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "Solder Jumper SPDT"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "SolderJumper*Open*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "SolderJumper_3_Open_0_1"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -2.032 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.016 1.016) (xy -1.016 -1.016)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.016 -1.016)
-					(mid -2.0276 0)
-					(end -1.016 1.016)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -0.508 1.016)
-					(end 0.508 -1.016)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -1.016)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.016 1.016)
-					(mid 2.0276 0)
-					(end 1.016 -1.016)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 1.016) (xy 1.016 -1.016)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 2.032 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "SolderJumper_3_Open_1_1"
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.54)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "B"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "global_custom:30_pin_simm"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -5542,6 +5280,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "01bbb1ba-6067-4002-8212-a859f341f966")
+	)
+	(junction
+		(at 429.26 184.15)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "043553c9-3161-4b2d-bb36-32679e277e49")
 	)
 	(junction
 		(at 330.2 228.6)
@@ -9825,6 +9569,16 @@
 	)
 	(wire
 		(pts
+			(xy 330.2 171.45) (xy 337.82 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "618b1ab8-b7eb-4a38-b2b5-136d9552dd54")
+	)
+	(wire
+		(pts
 			(xy 200.66 241.3) (xy 203.2 241.3)
 		)
 		(stroke
@@ -9902,6 +9656,16 @@
 			(type default)
 		)
 		(uuid "74d2c46e-1589-4b99-8dff-d496a476ee9d")
+	)
+	(wire
+		(pts
+			(xy 337.82 184.15) (xy 337.82 171.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76a0e646-4d61-4eaa-a221-fe52e2dac2aa")
 	)
 	(wire
 		(pts
@@ -10085,7 +9849,7 @@
 	)
 	(wire
 		(pts
-			(xy 330.2 168.91) (xy 330.2 163.83)
+			(xy 327.66 171.45) (xy 327.66 163.83)
 		)
 		(stroke
 			(width 0)
@@ -10365,6 +10129,16 @@
 	)
 	(wire
 		(pts
+			(xy 327.66 163.83) (xy 330.2 163.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c406a617-1d1c-4931-afd5-ae8d87991ecc")
+	)
+	(wire
+		(pts
 			(xy 383.54 203.2) (xy 383.54 231.14)
 		)
 		(stroke
@@ -10602,6 +10376,16 @@
 			(type default)
 		)
 		(uuid "e303912b-e8d8-48e6-be09-8aa6155ba87f")
+	)
+	(wire
+		(pts
+			(xy 429.26 184.15) (xy 337.82 184.15)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e52ea3a4-bf50-4aa0-9f44-3ebface2db19")
 	)
 	(wire
 		(pts
@@ -10993,30 +10777,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS2_1}"
-		(shape input)
-		(at 36.83 254 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "0e9614a9-556a-4191-b335-378e16360fbb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.7699 254 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "MD3"
 		(shape input)
 		(at 48.26 172.72 0)
@@ -11137,30 +10897,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS3_0}"
-		(shape input)
-		(at 26.67 266.7 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "126a693d-529a-44d4-9042-910369329387")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.7301 266.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "MP3"
 		(shape input)
 		(at 200.66 191.77 0)
@@ -11185,7 +10921,7 @@
 			)
 		)
 	)
-	(global_label "~{RASH}"
+	(global_label "~{RASH_1}"
 		(shape input)
 		(at 127 167.64 180)
 		(fields_autoplaced yes)
@@ -11737,7 +11473,7 @@
 			)
 		)
 	)
-	(global_label "~{RASH}"
+	(global_label "~{RASH_0}"
 		(shape input)
 		(at 386.08 127 270)
 		(fields_autoplaced yes)
@@ -11749,7 +11485,7 @@
 		)
 		(uuid "27d9622e-d374-4720-be41-b2b4ab83b072")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 386.08 134.8838 90)
+			(at 386.08 137.0609 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11798,30 +11534,6 @@
 		(uuid "28a967c2-7315-4465-afbf-f7545310e27d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 93.4744 27.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS1_1}"
-		(shape input)
-		(at 76.2 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2996bcc3-93d4-4683-b589-e730ba20cff5")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 66.2601 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -11953,30 +11665,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS0_1}"
-		(shape input)
-		(at 25.4 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2d6ca2b9-1c79-4abc-9cd5-e0b873d05473")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 15.4601 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "MD6"
 		(shape input)
 		(at 48.26 180.34 0)
@@ -12014,30 +11702,6 @@
 		(uuid "2eafbe88-3569-4e3e-8aa4-f96736a8b83b")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 167.6786 25.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS2_0}"
-		(shape input)
-		(at 127 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "2f96dc38-62f2-4989-bd87-185d48d501fb")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 117.0601 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -12193,31 +11857,7 @@
 			)
 		)
 	)
-	(global_label "~{CAS2}"
-		(shape input)
-		(at 31.75 257.81 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "3838936b-5a6f-409d-9fe2-3ef92cebb105")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.5128 257.81 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "~{RASH}"
+	(global_label "~{RASH_1}"
 		(shape input)
 		(at 177.8 167.64 180)
 		(fields_autoplaced yes)
@@ -12553,30 +12193,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS1_0}"
-		(shape input)
-		(at 26.67 241.3 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "47ff5aea-8c7d-4e9c-9ef9-6f299fa8e512")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.7301 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "MA1"
 		(shape input)
 		(at 375.92 25.4 270)
@@ -12793,12 +12409,13 @@
 			)
 		)
 	)
-	(global_label "~{RASL}"
+	(global_label "~{RASL_1}"
 		(shape input)
 		(at 25.4 167.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
+				(face "Standard Symbols PS")
 				(size 1.27 1.27)
 			)
 			(justify right)
@@ -13081,30 +12698,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS2_0}"
-		(shape input)
-		(at 26.67 254 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "56bb1e3c-5ff4-4dc8-8b45-bef02be67c40")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.7301 254 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "MP0"
 		(shape input)
 		(at 189.23 35.56 0)
@@ -13286,6 +12879,30 @@
 		(uuid "5c95b07d-d4ad-4cfb-b6f6-58d6719e6b6c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 120.2653 193.04 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{RASL_1}"
+		(shape input)
+		(at 457.2 160.02 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "5d341082-0830-474c-9ca1-b65140854261")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 457.2 169.7785 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13681,30 +13298,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS0_0}"
-		(shape input)
-		(at 26.67 228.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6728ba65-1559-4e2d-961d-0529b66fd8ff")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 16.7301 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "~{CAS0}"
 		(shape input)
 		(at 370.84 203.2 270)
@@ -13801,7 +13394,7 @@
 			)
 		)
 	)
-	(global_label "~{RASH}"
+	(global_label "~{RASH_0}"
 		(shape input)
 		(at 127 104.14 180)
 		(fields_autoplaced yes)
@@ -13990,30 +13583,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS0_1}"
-		(shape input)
-		(at 36.83 228.6 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7446f888-a6dc-4e55-a02d-89b92e90ebf2")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.7699 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -14305,7 +13874,7 @@
 			)
 		)
 	)
-	(global_label "~{RASL}"
+	(global_label "~{RASL_0}"
 		(shape input)
 		(at 76.2 104.14 180)
 		(fields_autoplaced yes)
@@ -14329,9 +13898,9 @@
 			)
 		)
 	)
-	(global_label "~{CAS1_0}"
+	(global_label "~{CAS1}"
 		(shape input)
-		(at 76.2 101.6 180)
+		(at 76.2 165.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -14339,33 +13908,9 @@
 			)
 			(justify right)
 		)
-		(uuid "8292163e-3b05-4dd3-96ec-6a5a0e660e9b")
+		(uuid "82cdc6db-4f7f-4a9a-a5a5-c7fffb7eadb6")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 66.2601 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS0_0}"
-		(shape input)
-		(at 25.4 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "82f3b451-df25-48bd-a68d-200bc198444d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 15.4601 101.6 0)
+			(at 68.4372 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14582,6 +14127,30 @@
 		(uuid "8975cc37-3be9-49a5-b0e3-d22e1e596ac5")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 120.2653 116.84 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{CAS2}"
+		(shape input)
+		(at 127 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "8979a6bd-d21d-41ff-a6eb-2f920d7e2355")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.2372 165.1 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14857,7 +14426,31 @@
 			)
 		)
 	)
-	(global_label "~{RASL}"
+	(global_label "~{CAS3}"
+		(shape input)
+		(at 177.8 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "991e054c-59a9-4e6e-bf72-762d72d82b73")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.0372 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{RASL_0}"
 		(shape input)
 		(at 393.7 127 270)
 		(fields_autoplaced yes)
@@ -14869,7 +14462,7 @@
 		)
 		(uuid "9a6bdc46-23e1-437a-bb28-b7b49cee9460")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 393.7 134.5814 90)
+			(at 393.7 136.7585 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15289,30 +14882,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS3_1}"
-		(shape input)
-		(at 177.8 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "a5f92ef2-5f40-4d8f-afa0-5b0d7a10f098")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.8601 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "MA9"
 		(shape input)
 		(at 127 137.16 180)
@@ -15529,6 +15098,30 @@
 			)
 		)
 	)
+	(global_label "~{RASH_1}"
+		(shape input)
+		(at 449.58 160.02 270)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "ad8aba9c-0f6b-46e3-8ffb-237b447b73ea")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 449.58 170.0809 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "MD22"
 		(shape input)
 		(at 114.3 40.64 0)
@@ -15625,7 +15218,7 @@
 			)
 		)
 	)
-	(global_label "~{RASH}"
+	(global_label "~{RASH_0}"
 		(shape input)
 		(at 177.8 104.14 180)
 		(fields_autoplaced yes)
@@ -15742,30 +15335,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS1}"
-		(shape input)
-		(at 31.75 245.11 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "b3604172-6c83-4103-83d4-458771cd8507")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.5128 245.11 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -16151,6 +15720,30 @@
 			)
 		)
 	)
+	(global_label "~{CAS3}"
+		(shape input)
+		(at 177.8 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "bcea2fee-798b-42ee-b08c-7ff0e3899f6e")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 170.0372 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "MA5"
 		(shape input)
 		(at 127 190.5 180)
@@ -16247,30 +15840,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS2_1}"
-		(shape input)
-		(at 127 165.1 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "bea169a6-9d91-4ab4-8de1-cc465436a203")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 117.0601 165.1 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
 	(global_label "MD2"
 		(shape input)
 		(at 48.26 170.18 0)
@@ -16356,6 +15925,30 @@
 		(uuid "c260bd48-8f97-4009-8fa9-798a09cd3a35")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 370.84 82.9347 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{CAS1}"
+		(shape input)
+		(at 76.2 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c3dc9714-9bad-4305-9f8a-5c84f1ce706b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 68.4372 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16572,54 +16165,6 @@
 		(uuid "c7e296e7-7967-4bd0-b1f4-3e9e98bbf165")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 169.7953 66.04 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS0}"
-		(shape input)
-		(at 31.75 232.41 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "c833aefe-38e6-4b75-9527-160f066aee64")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.5128 232.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "~{CAS3_0}"
-		(shape input)
-		(at 177.8 101.6 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "c8470044-d3b6-4f70-b81a-8fe81861a8f7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 167.8601 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16991,6 +16536,30 @@
 			)
 		)
 	)
+	(global_label "~{CAS2}"
+		(shape input)
+		(at 127 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d6aa259d-690b-4e2c-9abd-6bb949265d10")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 119.2372 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "~{CAS2_0}"
 		(shape input)
 		(at 149.86 123.19 0)
@@ -17004,30 +16573,6 @@
 		(uuid "d7141d2e-9e99-412d-bc1f-449b61f1af6c")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 159.7999 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
-	(global_label "~{CAS3}"
-		(shape input)
-		(at 31.75 270.51 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "d8ecad73-d535-490c-8709-9524628767b4")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 39.5128 270.51 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17159,12 +16704,13 @@
 			)
 		)
 	)
-	(global_label "~{RASL}"
+	(global_label "~{RASL_1}"
 		(shape input)
 		(at 76.2 167.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
+				(face "Standard Symbols PS")
 				(size 1.27 1.27)
 			)
 			(justify right)
@@ -17278,7 +16824,7 @@
 			)
 		)
 	)
-	(global_label "~{RASL}"
+	(global_label "~{RASL_0}"
 		(shape input)
 		(at 25.4 104.14 180)
 		(fields_autoplaced yes)
@@ -17422,6 +16968,30 @@
 			)
 		)
 	)
+	(global_label "~{CAS0}"
+		(shape input)
+		(at 25.4 165.1 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e8f79d92-45c4-4753-bc95-285ed0f77eb5")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 17.6372 165.1 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
 	(global_label "MD9"
 		(shape input)
 		(at 99.06 167.64 0)
@@ -17539,30 +17109,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-			)
-		)
-	)
-	(global_label "~{CAS3_1}"
-		(shape input)
-		(at 36.83 266.7 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "f4624c84-588e-4ea4-b628-d77f4da8b09e")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.7699 266.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 			)
 		)
 	)
@@ -17686,30 +17232,6 @@
 			)
 		)
 	)
-	(global_label "~{CAS1_1}"
-		(shape input)
-		(at 36.83 241.3 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "fb415f75-101f-406e-aa2a-b7fd54f977da")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 46.7699 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-	)
 	(global_label "MA8"
 		(shape input)
 		(at 76.2 198.12 180)
@@ -17771,6 +17293,30 @@
 		(uuid "fcb7cc23-7103-418f-ab88-1510448d6c44")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 120.2653 185.42 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+	)
+	(global_label "~{CAS0}"
+		(shape input)
+		(at 25.4 101.6 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "fd47e00b-7925-4b91-b758-2178da909566")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 17.6372 101.6 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19691,7 +19237,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Conn_01x03_Pin")
-		(at 330.2 173.99 90)
+		(at 327.66 176.53 90)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -19702,7 +19248,7 @@
 		(fields_autoplaced yes)
 		(uuid "3195a9bd-4872-4136-ac55-9d9d81d54542")
 		(property "Reference" "J4"
-			(at 330.2 176.53 90)
+			(at 327.66 179.07 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19712,7 +19258,7 @@
 			)
 		)
 		(property "Value" "Conn_01x03_Pin"
-			(at 330.2 179.07 90)
+			(at 327.66 181.61 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -19722,7 +19268,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
-			(at 330.2 173.99 0)
+			(at 327.66 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19733,7 +19279,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 330.2 173.99 0)
+			(at 327.66 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -19744,7 +19290,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x03, script generated"
-			(at 330.2 173.99 0)
+			(at 327.66 176.53 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -23699,111 +23245,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 31.75 241.3 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "79d822a4-a0b9-40d7-ab85-321d9344ebe0")
-		(property "Reference" "JP2"
-			(at 31.75 234.95 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 31.75 237.49 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
-			(at 31.75 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 256.54 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 31.75 254 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
-			(at 31.75 259.08 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
-			(at 31.75 261.62 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "95ef86ec-0637-4ecc-bf0c-e9cd19dd89d2")
-		)
-		(pin "2"
-			(uuid "312c2747-23d0-4950-a1e6-3808fcaf8b2b")
-		)
-		(pin "1"
-			(uuid "17e4d319-f7e4-4472-83f4-97f7b4c3e291")
-		)
-		(instances
-			(project "mem"
-				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
-					(reference "JP2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 139.7 228.6 270)
 		(unit 1)
@@ -23956,111 +23397,6 @@
 			(project "mem"
 				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
 					(reference "#PWR034")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 31.75 228.6 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "7bdc558d-f706-4a71-9e20-3874a4d8f725")
-		(property "Reference" "JP1"
-			(at 31.75 222.25 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 31.75 224.79 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
-			(at 31.75 228.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 243.84 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 31.75 241.3 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
-			(at 31.75 246.38 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
-			(at 31.75 248.92 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "e4cfe10b-803a-4620-8ba1-11c7c79ac923")
-		)
-		(pin "2"
-			(uuid "c32637de-775d-47a6-a56a-770855014b9b")
-		)
-		(pin "1"
-			(uuid "f6480c6f-2007-4b47-a07c-e46d37bb44eb")
-		)
-		(instances
-			(project "mem"
-				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -24925,111 +24261,6 @@
 			(project "mem"
 				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
 					(reference "SIMM3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 31.75 266.7 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "91c5ad10-393d-412b-8f25-d23cb928cc75")
-		(property "Reference" "JP4"
-			(at 31.75 260.35 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 31.75 262.89 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
-			(at 31.75 266.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 281.94 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 31.75 279.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
-			(at 31.75 284.48 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
-			(at 31.75 287.02 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "ae0e3480-8a09-4836-9dc8-f24f54587418")
-		)
-		(pin "2"
-			(uuid "c837cfc8-24dd-41b9-814c-33af9c37f13b")
-		)
-		(pin "1"
-			(uuid "15ce41ba-e310-4f7b-b70f-40d2371b74e0")
-		)
-		(instances
-			(project "mem"
-				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
-					(reference "JP4")
 					(unit 1)
 				)
 			)
@@ -28775,111 +28006,6 @@
 			(project "mem"
 				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
 					(reference "#PWR039")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Jumper:SolderJumper_3_Open")
-		(at 31.75 254 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom no)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ceca2fa7-2e4f-429a-83bc-9e4ffd484a38")
-		(property "Reference" "JP3"
-			(at 31.75 247.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "SolderJumper_3_Open"
-			(at 31.75 250.19 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm_NumberLabels"
-			(at 31.75 254 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 31.75 269.24 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Solder Jumper, 3-pole, open"
-			(at 31.75 266.7 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S5.1" "This is a generic symbol, it has fp-filter, but no default footprint"
-			(at 31.75 271.78 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property private "KLC_S3.3" "Graphical-Symbol: thickness is 6mm, fill is background"
-			(at 31.75 274.32 0)
-			(hide yes)
-			(show_name yes)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "55ffa226-ec1f-40ac-9eb0-af3ccc502606")
-		)
-		(pin "2"
-			(uuid "fb144a86-9a85-4e36-a52c-58867e205d49")
-		)
-		(pin "1"
-			(uuid "71d81154-f72e-4275-9834-7504b0e1b774")
-		)
-		(instances
-			(project "mem"
-				(path "/4455b670-b35e-4c13-98bf-b58defa67f8f"
-					(reference "JP3")
 					(unit 1)
 				)
 			)
